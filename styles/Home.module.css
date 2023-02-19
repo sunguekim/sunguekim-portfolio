@@ -1,0 +1,26 @@
+.hero {
+  padding-top: 40px;
+}
+
+.hero p {
+  line-height: 2.2rem;
+  max-width: 40rem;
+}
+
+.hero img {
+  padding-left: 40px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .hero__img {
+    justify-content: center;
+  }
+}

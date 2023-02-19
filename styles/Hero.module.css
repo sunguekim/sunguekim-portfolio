@@ -1,0 +1,28 @@
+.hero {
+  padding-top: 60px !important;
+  justify-content: space-between;
+  background-color: #333
+}
+
+.hero p {
+  font-size: 6.25rem;
+  line-height: 1.75rem;
+  max-width: 24rem;
+}
+
+.hero_img {
+  width: 60%;
+  height: 70vh;
+  border-radius: 30px;
+  margin-left: 30px;
+  box-shadow: 10px 5px 5px black;
+}
+
+.hero_img {
+  position: relative;
+  border-radius: 30px;
+}
+
+.hero__img img {
+  border-radius: 50px 5px 5px 5px;
+}
