@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link';
 import { Divider } from '@mui/material';
 import { getThemeProps, makeStyles, useTheme, styled } from '@mui/styles';
@@ -6,6 +6,7 @@ import MaterialSwitch from './Switch';
 import { HeaderDrawer } from './Drawer';
 import styles from "../../styles/Header.module.css"
 import { Container } from '@mui/material';
+import throttle from 'lodash/throttle';
 
 
 export interface ILinks {
@@ -44,24 +45,24 @@ export const Links: ILinks[] = [
 ];
 
 
-const HeaderDiv = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.default,
-}))
+
 
 const Header = () => {
+    const [scrollFlag, setScrollFlag] = useState(false);
     const headerRef = useRef<HTMLDivElement>(null);
 
-    const handleScroll = () => {
-        if (headerRef.current) {
-            const headerHeight = headerRef.current.getBoundingClientRect().height;
-            const scrollPosition = window.pageYOffset;
-            if (scrollPosition > headerHeight) {
-                headerRef.current.classList.add(`${styles.header__shrink}`);
-            } else {
-                headerRef.current.classList.remove(`${styles.header__shrink}`);
-            }
-        }
+    const HeaderDiv = styled('div')(({ theme }) => ({
+        backgroundColor: theme.palette.background.default,
+        boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
+    }))
+
+    const updateScroll = () => {
+        const { scrollY } = window;
+        const isScrolled = scrollY !== 0;
+        setScrollFlag(isScrolled);
     };
+
+    const handleScroll = throttle(updateScroll, 100);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
