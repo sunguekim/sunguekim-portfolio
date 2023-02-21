@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import type { NextPage } from 'next'
-import { Head } from 'next/document';
+import Head from "next/head";
 import Education from '../component/Education'
 import Experience from '../component/Experience'
 import Intro from '../component/Home'
@@ -13,7 +13,19 @@ const Home: NextPage = () => {
     <Fragment>
       <Head>
         <title>김선규 포트폴리오</title>
-        <meta name="description" content="김선규 포트폴리오 페이지" />
+        <meta
+          name="description"
+          content="김선규 포트폴리오 페이지"
+          key="desc"
+        />
+        <meta
+          property="og:description"
+          content="프론트엔드 개발자 김선규 포트폴리오 입니다."
+        />
+        <meta
+          property="og:image"
+          content="/images/profile.jpg"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Intro />
