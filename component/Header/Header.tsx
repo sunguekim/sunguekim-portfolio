@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
+import throttle from 'lodash/throttle';
 import Link from 'next/link';
 import { Divider } from '@mui/material';
-import { getThemeProps, makeStyles, useTheme, styled } from '@mui/styles';
+import { styled } from '@mui/styles';
+import { Container } from '@mui/material';
 import MaterialSwitch from './Switch';
 import { HeaderDrawer } from './Drawer';
 import styles from "../../styles/Header.module.css"
-import { Container } from '@mui/material';
-import throttle from 'lodash/throttle';
 
 
 export interface ILinks {
@@ -43,8 +43,6 @@ export const Links: ILinks[] = [
         path: "#contact",
     },
 ];
-
-
 
 
 const Header = () => {
@@ -86,13 +84,13 @@ const Header = () => {
                             {Links.map(({ name, path, id }: ILinks) => {
                                 return <Link key={id} href={`/${path}`}>{name}</Link>
                             })}
-                            <Divider orientation="vertical" flexItem sx={{ height: 60, borderRightWidth: 2 }} />
+                            <Divider orientation="vertical" flexItem sx={{ height: 60, borderRightWidth: 2, marginRight: 0 }} />
                             <div className={`${styles.nav__right}`}>
                                 <MaterialSwitch />
                             </div>
                         </div>
                     </div>
-                    {/* ========= nav_drawer =========== */}
+                    {/* ========= 반응형 drawer =========== */}
                     <span className={`${styles.mobile__menu}`}>
                         <HeaderDrawer />
                     </span>

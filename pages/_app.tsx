@@ -4,6 +4,7 @@ import { ThemeProvider, CssBaseline, createTheme, PaletteMode, useMediaQuery } f
 import ColorContext from '../contexts/colorContext'
 import Layout from '../component/Layout';
 import GetDesignTokens from '../styles/theme';
+import "../styles/globals.css";
 
 
 interface MyAppProps extends AppProps {

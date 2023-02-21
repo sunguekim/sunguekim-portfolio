@@ -17,7 +17,7 @@ const Project: React.FC<Props> = ({ project }) => {
                 <div>
                     <Link href="/#project">
                         <div className={`${styles.project__backlink}`}>
-                            <BiChevronLeft size={25} /> back
+                            <BiChevronLeft size={25} />back
                         </div>
                     </Link>
                 </div>
@@ -32,11 +32,10 @@ const Project: React.FC<Props> = ({ project }) => {
                     Description
                 </h2>
                 <div className="desc">
-                    <h2>Description</h2>
                     <p>{project.desc}</p>
 
                     <h2>Tech Stack</h2>
-                    <p>Primary: {project.detail.techStack.primary}</p>
+                    <p>Primary SKill: {project.detail.techStack.primary}</p>
                     <ul>
                         {project.detail.techStack.additional.map((tech, index) => (
                             <li key={index}>{tech}</li>

@@ -45,11 +45,12 @@
 }
 
 .nav__right {
+  margin-left: -3em;
   justify-content: center;
   align-items: center;
 }
 
-.nav__right p::before {
+/* .nav__right p::before {
   content: "";
   position: absolute;
   top: 25%;
@@ -58,12 +59,8 @@
   height: 14px;
   background: #808dad;
   color: #808dad;
-}
+} */
 
-.header__shrink {
-  position: sticky;
-  box-shadow: 5px 5px 15px -5px #01d29344 !important;
-}
 
 .mobile__menu {
   display: none;
