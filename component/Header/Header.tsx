@@ -46,12 +46,13 @@ export const Links: ILinks[] = [
 
 
 const Header = () => {
-    const [scrollFlag, setScrollFlag] = useState(false);
-    const headerRef = useRef<HTMLDivElement>(null);
+    const [scrollFlag, setScrollFlag] = useState<boolean>(false);
 
     const HeaderDiv = styled('div')(({ theme }) => ({
         backgroundColor: theme.palette.background.default,
         boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
+        position: "sticky",
+        zIndex: 1
     }))
 
     const updateScroll = () => {
@@ -70,7 +71,7 @@ const Header = () => {
     }, []);
 
     return (
-        <HeaderDiv className={`${styles.header} `} ref={headerRef}>
+        <HeaderDiv className={`${styles.header} `}>
             <Container>
                 <div className={`${styles.nav__wrapper}`}>
                     <div className={`${styles.logo}`}>

@@ -35,7 +35,7 @@ export const HeaderDrawer = () => {
                 open={isOpen}
                 onClose={() => { setOpen(false) }}
             >
-                <Box p={2} width='250px' textAlign='center' justifyContent='center' role='presentation'>
+                <Box p={2} width='250px' textAlign='center' zIndex={-9999} justifyContent='center' role='presentation'>
                     <List>
                         {Links.map(({ id, name, path }: ILinks) => {
                             return (
