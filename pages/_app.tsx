@@ -11,7 +11,6 @@ interface MyAppProps extends AppProps {
   themeSetting: PaletteMode;
 }
 
-
 const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
 
   const [mode, setMode] = useState<PaletteMode>(
