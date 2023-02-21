@@ -4,12 +4,13 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 import { IExpList, IExprience } from '../../contexts/props';
 
 
-const ExpCard: React.FC<IExprience> = ({ id, title, src }) => {
+const ExpCard: React.FC<IExprience> = ({title, src }) => {
+    const theme = useTheme();
     return (
-
         <Grid item xs={12} md={3} >
             <Box
                 component={Card}
@@ -27,15 +28,15 @@ const ExpCard: React.FC<IExprience> = ({ id, title, src }) => {
                 data-aos-duration={600}
             >
                 <CardContent
-                    sx={{
+                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         transition: 'all .2s ease-in-out',
                         '&:hover': {
-                            transform: `translateY(-spacing(1))`,
+                          transform: `translateY(-${theme.spacing(1)})`,
                         },
-                    }}
+                      }}
                 >
                     <Box marginBottom={1}>
                         <Box
