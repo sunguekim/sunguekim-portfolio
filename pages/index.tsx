@@ -14,11 +14,6 @@ const Home: NextPage = () => {
       <Head>
         <title>김선규 포트폴리오</title>
         <meta
-          name="description"
-          content="김선규 포트폴리오 페이지"
-          key="desc"
-        />
-        <meta
           property="og:description"
           content="프론트엔드 개발자 김선규 포트폴리오 입니다."
         />
