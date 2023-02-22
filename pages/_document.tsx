@@ -6,8 +6,19 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html>
+                <Head>
+                    <meta
+                        property="og:description"
+                        content="프론트엔드 개발자 김선규 포트폴리오 입니다."
+                    />
+                    <meta
+                        property="og:image"
+                        content="/images/profile.jpg"
+                    />
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
                 <body>
-                    <Head/>
+
                     <Main />
                     <NextScript />
                 </body>
