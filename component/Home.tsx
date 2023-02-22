@@ -9,11 +9,19 @@ const Home = () => {
     return (
         <div id="about">
             <Grid
-                className={`${styles.hero}`}
                 justifyContent="space-between"
                 container spacing={2}
+                sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column-reverse", md: "row" },
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}
             >
-                <Grid item xs={8} >
+                <Grid
+                    item xs={8}
+                    sx={{ marginTop: { md: -15 } }}
+                >
                     <Subtitle subtitle="About" />
                     <h2>안녕하세요! 프론트엔드 개발자 김선규입니다.</h2>
                     <p>
@@ -36,7 +44,6 @@ const Home = () => {
                     />
                 </Grid>
             </Grid>
-
         </div>
     )
 }
