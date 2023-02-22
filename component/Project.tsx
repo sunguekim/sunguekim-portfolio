@@ -7,7 +7,7 @@ import styles from '../styles/Project.module.css'
 
 const Project = () => {
     return (
-        <section id='project'>
+        <div id='project'>
             <Subtitle subtitle='Project' />
             <div className={`${styles.project__section}`}>
                 {projects.map((project) => (
@@ -18,7 +18,7 @@ const Project = () => {
                     </Link>
                 ))}
             </div>
-        </section>
+        </div>
     )
 }
 

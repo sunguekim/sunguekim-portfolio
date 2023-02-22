@@ -30,7 +30,6 @@ const Home = () => {
                     alignItems="center"
                 >
                     <Image
-    
                         src={profileimg}
                         width="300" height="450"
                         alt="프로필 이미지"

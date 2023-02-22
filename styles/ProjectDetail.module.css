@@ -62,4 +62,8 @@
     .project__container h2 {
         text-align: center;
     }
+
+    .project__container ul{
+        text-align: center;
+    }
 }

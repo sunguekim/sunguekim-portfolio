@@ -25,22 +25,22 @@ export const Links: ILinks[] = [
     {
         id: 2,
         name: "About",
-        path: "#about",
+        path: "about",
     },
     {
         id: 3,
         name: "Experience",
-        path: "#experience",
+        path: "experience",
     },
     {
         id: 4,
         name: "Project",
-        path: "#project",
+        path: "project",
     },
     {
         id: 5,
         name: "Contact",
-        path: "#contact",
+        path: "contact",
     },
 ];
 
@@ -83,7 +83,7 @@ const Header = () => {
                     <div className={`${styles.navigation}`}>
                         <div className={`${styles.nav__menu}`}>
                             {Links.map(({ name, path, id }: ILinks) => {
-                                return <Link key={id} href={`/${path}`}>{name}</Link>
+                                return <Link key={id} href={`/#${path}`}>{name}</Link>
                             })}
                             <Divider orientation="vertical" flexItem sx={{ height: 60, borderRightWidth: 2, marginRight: 0 }} />
                             <div className={`${styles.nav__right}`}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Project.module.css'
 import Image from 'next/image'
+import Icon from '@mui/material/Icon';
 import { IProject } from '../../contexts/props'
 
 const ProjectCard = (project: IProject) => {
@@ -15,10 +16,10 @@ const ProjectCard = (project: IProject) => {
             />
             <h3>{project.title}</h3>
             <hr />
-            <p>
+            <div className={`${styles.projcet__desc}`} id="projectDesc">
                 {project.desc}
-            </p>
-            <div>
+            </div>
+            <div className={`${styles.projcet__skill}`}>
                 <div className={`${styles.projcet__title}`}>Skill Stack</div>
                 <hr />
                 <ul>
@@ -26,6 +27,7 @@ const ProjectCard = (project: IProject) => {
                         <li key={element}>{element}</li>
                     ))}
                 </ul>
+                <Icon baseClassName="fas" className="fa-plus-circle" />
             </div>
         </div>
     )

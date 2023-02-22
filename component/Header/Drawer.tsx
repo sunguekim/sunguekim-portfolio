@@ -40,14 +40,13 @@ export const HeaderDrawer = () => {
                         {Links.map(({ id, name, path }: ILinks) => {
                             return (
                                 <ListItem button key={id}>
-                                    <Link key={id} href={path}>
-                                        <ListItemText primary={name} />
+                                    <Link key={id} href={`/#${path}`}>
+                                        <ListItemText sx={{ textAlign: 'center' }} primary={name} />
                                     </Link>
                                 </ListItem>
                             )
                         })}
                     </List>
-
                     <MaterialSwitch />
                 </Box>
             </Drawer>
