@@ -3,8 +3,15 @@ import { projects } from '../../contexts/data/projectData'
 import { IProject } from '../../contexts/props';
 import { BiChevronLeft } from "react-icons/bi"
 import Image from 'next/image';
+import Head from "next/head";
+import List from '@mui/material/List';
+import Stack from '@mui/material/Stack';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText'
 import styles from '../../styles/ProjectDetail.module.css'
 import Link from 'next/link';
+import Divider from '@mui/material/Divider';
 
 interface Props {
     project: IProject
@@ -12,7 +19,11 @@ interface Props {
 
 const Project: React.FC<Props> = ({ project }) => {
     return (
+
         <div className={`${styles.project__wrapper}`}>
+            <Head>
+                <title>김선규 프로젝트</title>
+            </Head>
             <div className={`${styles.project__container}`}>
                 <div>
                     <Link href="/#project">
@@ -36,22 +47,26 @@ const Project: React.FC<Props> = ({ project }) => {
 
                     <h2>Tech Stack</h2>
                     <p>Primary SKill: {project.detail.techStack.primary}</p>
-                    <ul>
-                        {project.detail.techStack.additional.map((tech, index) => (
-                            <li key={index}>{tech}</li>
-                        ))}
-                    </ul>
-
+                    <p>Sub Skill:</p>
+                    <List sx={{ marginTop: -2 }} component={Stack} direction="row">
+                        <ListItem disablePadding>
+                            {project.detail.techStack.additional.map((tech, index) => (
+                                <ListItemButton key={index}>
+                                    <ListItemText sx={{ textAlign: "center", marginLeft: -1 }} primary={tech} />
+                                    <Divider sx={{ borderRightWidth: 2, marginRight: -2 }} orientation="vertical" flexItem />
+                                </ListItemButton>
+                            ))}
+                        </ListItem>
+                    </List>
                     <h2>Objective</h2>
                     <p>{project.detail.objective}</p>
-
                     <h2>Pages</h2>
-                    <ul>
-                        {project.detail.pages.map((page, index) => (
-                            <li key={index}>{page}</li>
-                        ))}
-                    </ul>
-
+                    {project.detail.pages.map((page, index) => (
+                        <ListItemButton key={index}>
+                            <ListItemText sx={{ textAlign: "center" }} primary={page} />
+                            <Divider />
+                        </ListItemButton>
+                    ))}
                     <h2>Key Learnings</h2>
                     <p>{project.detail.keyLearnings}</p>
 

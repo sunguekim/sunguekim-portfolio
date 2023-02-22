@@ -13,6 +13,7 @@
 
 .logo h1 {
   font-size: 2rem;
+  margin-top: 0.2em;
 }
 
 .logo h1 span {
@@ -30,6 +31,7 @@
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
+  margin-top: -1em;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -44,6 +46,7 @@
 
 .nav__right {
   margin-left: -3em;
+  margin-top: -0.9em;
   justify-content: center;
   align-items: center;
 }
