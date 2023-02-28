@@ -29,7 +29,17 @@ const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
   );
 
 
-  const theme = useMemo(() => createTheme(GetDesignTokens(mode)), [mode]);
+  const theme = useMemo(() => createTheme(GetDesignTokens(mode), {
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 768,
+        lg: 1280,
+        xl: 1920,
+      },
+    },
+  }), [mode]);
 
 
   useEffect(() => {

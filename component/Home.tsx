@@ -11,11 +11,14 @@ const Home = () => {
             <Grid
                 justifyContent="space-between"
                 container spacing={2}
+                className={`${styles.hero__container}`}
                 sx={{
                     display: "flex",
-                    flexDirection: { xs: "column-reverse", md: "row" },
                     justifyContent: "center",
-                    alignItems: "center"
+                    alignItems: "center",
+                    [`@media (max-width:768px)`]: {
+                        flexDirection: "column-reverse",
+                    },
                 }}
             >
                 <Grid
