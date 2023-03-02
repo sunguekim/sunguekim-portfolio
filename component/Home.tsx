@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import GithubIcon from '@mui/icons-material/GitHub';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 import styles from '../styles/Home.module.css'
 import profileimg from '../public/images/profile.jpg'
 import Subtitle from "./UI/Subtitle";
@@ -33,6 +37,14 @@ const Home = () => {
                         또한, 동료와의 소통과 협업이 개발 프로젝트에서의 성공에 큰 영향을 미친다는 것을 알고 있습니다. 개발 팀의 목표를 달성하기 위해 동료들과 상호 존중과 소통의 적극적인 관심을 가지고 있습니다.
                         저는 새로운 경험과 도전을 통해 성장할 수 있는 기회를 기다리고 있습니다.
                     </p>
+                    <Stack direction="row" spacing={2} sx={{justifyContent:'center',marginTop:4}}>
+                        <Button variant="outlined" startIcon={<GithubIcon />}>
+                            Github
+                        </Button>
+                        <Button variant="contained" endIcon={<AssessmentIcon />}>
+                            이력서
+                        </Button>
+                    </Stack>
                 </Grid>
                 <Grid
                     item xs={4}
