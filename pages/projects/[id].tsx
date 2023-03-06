@@ -46,8 +46,12 @@ const Project: React.FC<Props> = ({ project }) => {
                     <p>{project.desc}</p>
 
                     <h2>Tech Stack</h2>
-                    <p>Primary SKill: {project.detail.techStack.primary}</p>
-                    <p>Sub Skill:</p>
+                    <div className={`${styles.project__skills}`}>
+                        <p>
+                            Primary SKill: {project.detail.techStack.primary}
+                        </p>
+                        <p>Sub Skill:</p>
+                    </div>
                     <List sx={{ marginTop: -2 }} component={Stack} direction="row">
                         <ListItem disablePadding>
                             {project.detail.techStack.additional.map((tech, index) => (
