@@ -1,19 +1,31 @@
-.edcation{
+.education {
     min-height: 100vh;
 }
 
-.edcation__body{
+.education__container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
+}
+
+.education__detail {
+    width: 100%;
+}
+
+.education__img {
+    width: 50%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .education__card {
     display: flex;
     flex-direction: row;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: flex-start;
     width: 90%;
     height: 140px;
