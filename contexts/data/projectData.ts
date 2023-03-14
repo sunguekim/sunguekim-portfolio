@@ -29,7 +29,7 @@ export const projects = [
         image: socialblog,
         url: "socialblog",
         skill: ['React', 'GraphQL', 'PostgreSQL', 'Typescript'],
-        desc: "React, TypeScript, GraphQL을 이용한 SocialWeb 플랫폼입니다. 기술 스택으로는 React, Apollo-Client, TypeScript, GraphQL, Prisma, PostgreSQL이 사용되었습니다.어플리케이션에는 로그인, 회원가입, 글 작성, 수정, 삭제, 모든 회원 글 보기, 북마크한 글 보기 기능이 있습니다.",
+        desc: "SocialWeb 플랫폼입니다. 기술 스택으로는 React,TypeScript, GraphQL이 사용되었습니다.어플리케이션에는 로그인, 회원가입, 글 작성, 수정, 삭제, 모든 회원 글 보기, 북마크한 글 보기 기능이 있습니다.",
         detail: {
             "techStack": {
                 "primary": "React",

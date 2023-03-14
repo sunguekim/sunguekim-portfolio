@@ -55,6 +55,7 @@ const Home = () => {
                     <Image
                         src={profileimg}
                         width="300" height="450"
+                        style={{ borderRadius: '20px' }}
                         alt="프로필 이미지"
                     />
                 </Grid>

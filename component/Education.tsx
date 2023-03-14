@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-import { Fade } from 'react-awesome-reveal'
 import Subtitle from './UI/Subtitle'
 import { education } from '../contexts/data/educationData'
 import { IEducation } from '../contexts/props'
@@ -25,7 +24,7 @@ const Education: React.FC = () => {
                         width="600px"
                         height="600px"
                         objectFit="contain"
-                        alt="프로필 이미지"
+                        alt="학습이미지"
                     />
                 </div>
             </div>
