@@ -31,6 +31,7 @@ const Contact = () => {
                         src={contactImg}
                         width="400"
                         height="400"
+                        objectFit="cover"
                         alt="contactImg"
                         style={{ borderRadius: '50%' }}
                     />
