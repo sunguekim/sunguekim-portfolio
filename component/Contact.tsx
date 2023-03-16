@@ -12,7 +12,9 @@ const Contact = () => {
         <div id='contact' className={`${styles.contact}`}>
             <Subtitle subtitle='Contact Me' />
             <Grid
+                container
                 marginTop={3}
+                spacing={3}
                 sx={{
                     display: "flex",
                     justifyContent: "center",
@@ -25,7 +27,7 @@ const Contact = () => {
             >
                 <Grid
                     item
-                    xs={3}
+                    xs={6}
                 >
                     <Image
                         src={contactImg}
@@ -36,7 +38,7 @@ const Contact = () => {
                         style={{ borderRadius: '50%' }}
                     />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6}>
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                             <Email sx={{ mr: 1 }} />

@@ -2,9 +2,9 @@
 
 html,
 body {
-
   font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth !important;
+  transition: background 0.25s ease-in-out;
 }
 
 a {

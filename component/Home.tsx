@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link"
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -11,7 +12,7 @@ import Subtitle from "./UI/Subtitle";
 
 const Home = () => {
     return (
-        <div id="about">
+        <div id="about" style={{ marginTop: "30px" }}>
             <Grid
                 justifyContent="space-between"
                 container spacing={2}
@@ -29,7 +30,7 @@ const Home = () => {
                     item xs={8}
                     sx={{ marginTop: { md: -15 } }}
                 >
-                    <Subtitle subtitle="About" />
+                    <Subtitle subtitle="About Me" />
                     <h2>안녕하세요! 프론트엔드 개발자 김선규입니다.</h2>
                     <p>
                         부트캠프와 42서울에서 학습을 통해 기초부터 프론트엔드 개발에 관한 깊은 지식을 습득했습니다.
@@ -44,7 +45,9 @@ const Home = () => {
                             Github
                         </Button>
                         <Button variant="outlined" endIcon={<AssessmentIcon />}>
-                            이력서
+                            <Link href="/resume.pdf" download={true}>
+                                이력서
+                            </Link>
                         </Button>
                     </Stack>
                 </Grid>

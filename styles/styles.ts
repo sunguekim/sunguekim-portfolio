@@ -13,6 +13,7 @@ const Styles = {
         },
         background: {
             default: '#f8f8f8',
+            paper:'#f8f8f8'
         },
         text: {
             primary: '#282828',
@@ -32,6 +33,7 @@ const Styles = {
         },
         background: {
             default: '#333',
+            paper: '#333',
         },
         text: {
             primary: '#fff',
