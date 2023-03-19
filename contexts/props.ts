@@ -44,5 +44,6 @@ interface IProjectDetail {
     objective: string;
     pages: string[];
     keyLearnings: string;
-    review?: string;
+    review: string;
+    link: string;
 }

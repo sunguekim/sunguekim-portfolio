@@ -1,20 +1,20 @@
 export const education = [
     {
-        id: 1,
+        id: 0,
         course: "42 서울",
         startYear: 2021,
-        endYear: "present",
+        endYear: 2022,
         detail: "본과정 입과"
     },
     {
-        id: 2,
+        id: 1,
         course: "Bit 캠프",
         startYear: 2020,
         endYear: 2021,
         detail: "프론트엔드 개발양성과정 수료"
     },
     {
-        id: 3,
+        id: 2,
         course: "국제대학교",
         startYear: 2016,
         endYear: 2020,

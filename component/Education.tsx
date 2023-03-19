@@ -14,9 +14,7 @@ const Education: React.FC = () => {
             <Subtitle subtitle='Education' />
             <div className={`${styles.education__container}`}>
                 <div className={`${styles.education__detail}`}>
-                    {education && education.map((data: IEducation) => (
-                        <EduationCard key={data.id} {...data} />
-                    ))}
+                    <EduationCard education={education} />
                 </div>
                 <div className={`${styles.education__img}`}>
                     <Image

@@ -49,11 +49,10 @@ const Header = () => {
     const [scrollFlag, setScrollFlag] = useState<boolean>(false);
 
     const HeaderDiv = styled('div')(({ theme }) => ({
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: scrollFlag ? theme.palette.background.default : "",
         boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
         position: "sticky",
-        transition: `${theme.palette.background.default} 0.25s ease-in-out`,
-        zIndex: 1
+        zIndex: 1,
     }))
 
     const updateScroll = () => {
