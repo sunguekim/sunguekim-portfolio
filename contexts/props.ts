@@ -19,7 +19,8 @@ export interface IEducation {
     course: string,
     startYear: number,
     endYear: number | string,
-    detail: string
+    detail: string,
+    learningDetail?: string
 }
 
 export interface EduList {

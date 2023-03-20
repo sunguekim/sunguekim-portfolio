@@ -1,6 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { Divider } from '@mui/material';
 import { Fade } from 'react-awesome-reveal'
 import SkillCard from './UI/SkillCard';
 import Subtitle from './UI/Subtitle';
@@ -12,6 +13,7 @@ const Experience: React.FC = () => {
        
             <div id='experience'>
                 <Subtitle subtitle='Experience' />
+                <Divider sx={{bgcolor:"#01d29383"}}/>
                  <Fade direction='up' triggerOnce={true}>
                 <Box
                     maxWidth={{ sm: 720, md: 1236 }}

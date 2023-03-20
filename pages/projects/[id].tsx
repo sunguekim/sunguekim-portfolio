@@ -77,6 +77,12 @@ const Project: React.FC<Props> = ({ project }) => {
                     <h2>Review</h2>
                     <p>{project.detail.review}</p>
                 </div>
+                <Link href={`${project.detail.link}`}>
+                    <button>
+                        Github
+                    </button>
+                </Link>
+
             </div>
         </div>
     )

@@ -52,23 +52,11 @@
   align-items: center;
 }
 
-/* .nav__right p::before {
-  content: "";
-  position: absolute;
-  top: 25%;
-  left: -20px;
-  width: 1px;
-  height: 14px;
-  background: #808dad;
-  color: #808dad;
-} */
 
 
 .mobile__menu {
   display: none;
 }
-
-/* ========== make it responsive ========= */
 
 @media only screen and (max-width: 768px) {
   .navigation {
