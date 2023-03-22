@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState, useMemo, Fragment } from 'react'
 import type { AppProps } from 'next/app'
 import { ThemeProvider, CssBaseline, createTheme, PaletteMode, useMediaQuery } from '@mui/material';
 import ColorContext from '../contexts/colorContext'
 import Layout from '../component/Layout';
 import GetDesignTokens from '../styles/theme';
 import "../styles/globals.css";
+import Loader from '../component/UI/Loader';
 
 
 interface MyAppProps extends AppProps {
@@ -16,6 +17,8 @@ const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
   const [mode, setMode] = useState<PaletteMode>(
     themeSetting || 'light'
   );
+
+  const [isLoading, setLoading] = useState(true);
 
   const colorMode = React.useMemo(
     () => ({
@@ -49,17 +52,24 @@ const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
     }
   }, []);
 
-
   return (
-    <ColorContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </ColorContext.Provider>
-
+    <Fragment>
+      {
+        isLoading ?
+          (
+            <Loader setLoading={setLoading} />
+          ) : (
+            <ColorContext.Provider value={colorMode} >
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </ThemeProvider>
+            </ColorContext.Provider>
+          )
+      }
+    </Fragment>
   )
 }
 
