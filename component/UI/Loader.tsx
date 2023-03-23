@@ -6,6 +6,18 @@ interface LoaderProps {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+            pathLength: { duration: 1.5, ease: "easeInOut" },
+            opacity: { duration: 0.01 }
+        }
+    }
+};
+
 const Loader = ({ setLoading }: LoaderProps) => {
     const styles = useStyles();
     return (
@@ -17,7 +29,7 @@ const Loader = ({ setLoading }: LoaderProps) => {
                 y: "-100vh"
             }}
             transition={{
-                delay: 4.2,
+                delay: 3.2,
                 duration: 0.3
             }}
             onAnimationComplete={definition => {
@@ -26,22 +38,27 @@ const Loader = ({ setLoading }: LoaderProps) => {
             className={styles.container}
         >
             <div className={styles.content}>
-                <motion.circle
-                    cx="100"
-                    cy="100"
-                    r="80"
-                    stroke="#fff"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    pathLength={1}
-                    opacity={1}
-                    transition={{
-                        pathLength: { delay: 4.0, type: "spring", duration: 1.5, bounce: 0 },
-                        opacity: { delay: 4.0, duration: 0.01 }
-                    }}
+                <motion.svg
+                    width="600"
+                    height="600"
+                    viewBox="0 0 600 600"
                 >
-                    Kim'S
-                </motion.circle>
+                    <motion.rect
+                        width="200"
+                        height="100"
+                        x="200"
+                        y="200"
+                        stroke="#ffffff"
+                        strokeWidth="3"
+                        fill="none"
+                        variants={draw}
+                        initial="hidden"
+                        animate="visible"
+                        rx="20"
+                        ry="20"
+                    />
+                    <text x="260" y="260" fill="#ffffff" fontSize="32">Kim's</text>
+                </motion.svg>
             </div>
         </motion.div>
     )
