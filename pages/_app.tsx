@@ -4,6 +4,7 @@ import { ThemeProvider, CssBaseline, createTheme, PaletteMode, useMediaQuery } f
 import ColorContext from '../contexts/colorContext'
 import Layout from '../component/Layout';
 import GetDesignTokens from '../styles/theme';
+import { AnimatePresence, motion } from 'framer-motion'
 import "../styles/globals.css";
 import Loader from '../component/UI/Loader';
 
@@ -12,7 +13,7 @@ interface MyAppProps extends AppProps {
   themeSetting: PaletteMode;
 }
 
-const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
+const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
 
   const [mode, setMode] = useState<PaletteMode>(
     themeSetting || 'light'
@@ -52,6 +53,13 @@ const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
     }
   }, []);
 
+  const spring = {
+    type: "spring",
+    damping: 20,
+    stiffness: 100,
+    when: "afterChildren"
+  };
+
   return (
     <Fragment>
       {
@@ -63,7 +71,18 @@ const MyApp = ({ Component, pageProps, themeSetting }: MyAppProps) => {
               <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Layout>
-                  <Component {...pageProps} />
+                  <AnimatePresence mode='wait' initial={false} >
+                    <motion.div
+                      transition={spring}
+                      key={router.pathname}
+                      initial={{ x: 300, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -300, opacity: 0 }}
+                      id="page-transition-container"
+                    >
+                      <Component {...pageProps} />
+                    </motion.div>
+                  </AnimatePresence>
                 </Layout>
               </ThemeProvider>
             </ColorContext.Provider>
