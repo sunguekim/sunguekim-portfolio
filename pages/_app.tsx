@@ -7,6 +7,7 @@ import GetDesignTokens from '../styles/theme';
 import { AnimatePresence, motion } from 'framer-motion'
 import "../styles/globals.css";
 import Loader from '../component/UI/Loader';
+import MotionEffect from '../component/UI/MotionEffect';
 
 
 interface MyAppProps extends AppProps {
@@ -53,12 +54,6 @@ const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
     }
   }, []);
 
-  const spring = {
-    type: "spring",
-    damping: 20,
-    stiffness: 100,
-    when: "afterChildren"
-  };
 
   return (
     <Fragment>
@@ -72,16 +67,9 @@ const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
                 <CssBaseline />
                 <Layout>
                   <AnimatePresence mode='wait' initial={false} >
-                    <motion.div
-                      transition={spring}
-                      key={router.pathname}
-                      initial={{ x: 300, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -300, opacity: 0 }}
-                      id="page-transition-container"
-                    >
+                    <MotionEffect>
                       <Component {...pageProps} />
-                    </motion.div>
+                    </MotionEffect>
                   </AnimatePresence>
                 </Layout>
               </ThemeProvider>

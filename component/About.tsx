@@ -40,7 +40,7 @@ const Home = () => {
                         또한, 동료와의 소통과 협업이 개발 프로젝트에서의 성공에 큰 영향을 미친다는 것을 알고 있습니다. 그리고 저는 새로운 경험과 도전을 통해 성장할 수 있는 기회를 기다리고 있습니다.
                         <br />
                     </p>
-                    <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-start', marginTop: 4 }}>
+                    {/* <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-start', marginTop: 4 }}>
                         <Button variant="contained" startIcon={<GithubIcon />}>
                             Github
                         </Button>
@@ -49,7 +49,7 @@ const Home = () => {
                                 이력서
                             </Link>
                         </Button>
-                    </Stack>
+                    </Stack> */}
                 </Grid>
                 <Grid
                     item xs={4}
