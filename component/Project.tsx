@@ -9,7 +9,7 @@ import { Divider } from '@mui/material';
 
 const Project = () => {
     return (
-        <div id='project'>
+        <div id='project' style={{ paddingTop: "100px" }}>
             <Container>
                 <Subtitle subtitle='Project' />
                 <Divider sx={{ bgcolor: "#01d29383" }} />

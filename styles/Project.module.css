@@ -1,6 +1,6 @@
 .project__section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     padding-top: 1.5rem;
     padding-bottom: 3rem;
     place-items: center;
@@ -87,11 +87,6 @@
     margin-top: 2rem;
 }
 
-@media only screen and (max-width: 1296px) {
-    .project__section {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    }
-}
 
 @media only screen and (max-width: 768px) {
     .project {

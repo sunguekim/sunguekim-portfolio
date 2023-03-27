@@ -10,9 +10,9 @@ import { exprience } from '../contexts/data/skillData'
 
 const Experience: React.FC = () => {
     return (
-        <div id='experience'>
+        <div id='experience' style={{ paddingTop: "30px", marginBottom: "-100px" }} >
+            <Subtitle subtitle='Experience' />
             <Container>
-                <Subtitle subtitle='Experience' />
                 <Divider sx={{ bgcolor: "#01d29383" }} />
                 <Fade direction='up' triggerOnce={true}>
                     <Box

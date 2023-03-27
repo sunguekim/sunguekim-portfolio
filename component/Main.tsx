@@ -24,7 +24,7 @@ const Main = () => {
                 <div>
                     <Link href="/#about" download={true}>
                         <button className={`${styles.btn}`}>
-                            Get in Touch
+                            Get In Touch
                         </button>
                     </Link>
                 </div>
@@ -33,10 +33,5 @@ const Main = () => {
     )
 }
 
-// const useStlyes = makeStyles((theme) => {
-//     subTitle: {
-
-//     }
-// })
 
 export default Main

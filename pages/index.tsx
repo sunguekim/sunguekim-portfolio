@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import type { NextPage } from 'next'
 import Head from "next/head";
 import Main from '../component/Main'

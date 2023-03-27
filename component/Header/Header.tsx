@@ -52,6 +52,7 @@ const Header = () => {
         backgroundColor: scrollFlag ? theme.palette.background.default : "",
         boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
         position: "sticky",
+        marginBottom:-100,
         zIndex: 1,
     }))
 

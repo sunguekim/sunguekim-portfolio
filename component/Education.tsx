@@ -12,7 +12,7 @@ import { Divider } from '@mui/material';
 
 const Education: React.FC = () => {
     return (
-        <div id='education' >
+        <div id='education' style={{marginBottom:"-20px"}} >
             <Container>
                 <Subtitle subtitle='Education' />
                 <Divider sx={{ bgcolor: "#01d29383" }} />

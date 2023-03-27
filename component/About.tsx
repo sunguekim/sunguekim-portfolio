@@ -13,8 +13,7 @@ import Subtitle from "./UI/Subtitle";
 
 const Home = () => {
     return (
-        <div id="about" style={{ marginTop: "30px" }}>
-            <Container>
+        <div id="about" style={{ paddingTop: "100px" }}>
                 <Subtitle subtitle="About Me" />
                 <Grid
                     justifyContent="space-between"
@@ -42,7 +41,7 @@ const Home = () => {
                             또한, 동료와의 소통과 협업의 가치를 알고있습니다. 그리고 저는 새로운 경험과 도전을 통해 성장할 수 있는 기회를 기다리고 있습니다.
                             <br />
                         </p>
-                        <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-start', marginTop: 4 }}>
+                        {/* <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-start', marginTop: 4 }}>
                             <Button variant="contained" startIcon={<GithubIcon />}>
                                 Github
                             </Button>
@@ -51,7 +50,7 @@ const Home = () => {
                                     이력서
                                 </Link>
                             </Button>
-                        </Stack>
+                        </Stack> */}
                     </Grid>
                     <Grid
                         item xs={4}
@@ -67,7 +66,6 @@ const Home = () => {
                         />
                     </Grid>
                 </Grid>
-            </Container>
         </div>
     )
 }
