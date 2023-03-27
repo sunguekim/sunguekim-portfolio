@@ -65,13 +65,11 @@ const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
             <ColorContext.Provider value={colorMode} >
               <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Layout>
                   <AnimatePresence mode='wait' initial={false} >
                     <MotionEffect>
                       <Component {...pageProps} />
                     </MotionEffect>
                   </AnimatePresence>
-                </Layout>
               </ThemeProvider>
             </ColorContext.Provider>
           )

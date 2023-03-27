@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image";
+import { Container } from '@mui/material';
 import Subtitle from './UI/Subtitle'
 import { education } from '../contexts/data/educationData'
 import { IEducation } from '../contexts/props'
@@ -12,11 +13,13 @@ import { Divider } from '@mui/material';
 const Education: React.FC = () => {
     return (
         <div id='education' >
-            <Subtitle subtitle='Education' />
-            <Divider sx={{bgcolor:"#01d29383"}}/>
-            <div className={`${styles.education__container}`}>
+            <Container>
+                <Subtitle subtitle='Education' />
+                <Divider sx={{ bgcolor: "#01d29383" }} />
+                <div className={`${styles.education__container}`}>
                     <EduationCard education={education} />
-            </div>
+                </div>
+            </Container>
         </div>
     )
 }

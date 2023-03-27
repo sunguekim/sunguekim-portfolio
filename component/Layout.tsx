@@ -12,8 +12,8 @@ const Layout = (props: LayoutProps) => {
         <Fragment>
             <MotionEffect>
                 <Header />
-                <Container>
                     <div>{props.children}</div>
+                <Container>
                 </Container>
             </MotionEffect>
         </Fragment>
