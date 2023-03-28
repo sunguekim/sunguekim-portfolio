@@ -1,4 +1,5 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import type { NextPage } from 'next'
 import Head from "next/head";
 import Main from '../component/Main'
@@ -11,12 +12,20 @@ import Layout from "../component/Layout";
 
 
 const Home: NextPage = () => {
+  const [mainVisible, setMainVisible] = useState<boolean>(true);
+
+  const handleMainHide = () => {
+    setMainVisible(false);
+  }
+
   return (
     <Fragment>
       <Head>
         <title>김선규 포트폴리오</title>
       </Head>
-      <Main />
+      <AnimatePresence>
+        {mainVisible && <Main onHide={handleMainHide} />}
+      </AnimatePresence>
       <Layout>
         <Intro />
         <Education />

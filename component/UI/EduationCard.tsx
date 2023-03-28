@@ -50,50 +50,56 @@ const EductionCard2: React.FC<EduList> = ({ education }) => {
 
     return (
         <Fade direction='up' triggerOnce={true}>
-                <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center'}}>
-                    <Tabs
-                        orientation={isMobile ? "horizontal" : "vertical"}
-                        variant="scrollable"
-                        value={value}
-                        onChange={handleChange}
-                        aria-label="educationInfo"
-                        sx={{ borderRight: 1, borderColor: 'divider', justifyContent: 'center', alignItems: 'center', }}
-                    >
-                        {education && education.map(({ id, course }, index) => (
-                            <Tab key={id} label={`${course}`} {...allyProps(0)} sx={{ fontSize: '18px', fontWeight: 600 }} />
-                        ))}
-                    </Tabs>
-                    <Box>
-                        {education && education.map(({ id, course, detail,learningDetail }, index) => (
-                            <TabPanel
-                                key={id}
-                                value={value}
-                                index={index}
-                            >
-                                <Box mb={4} >
-                                    <Typography variant="h4" component="h2" gutterBottom>
-                                        {course}
-                                    </Typography>
-                                </Box>
-                                <Box mb={4}>
-                                    <Typography variant="body1" gutterBottom>
-                                        {detail}
-                                    </Typography>
-                                </Box>
-                                <Box mb={4} >
-                                    <Typography color="textSecondary" variant="caption">
-                                        {`${education[index].startYear} - ${education[index].endYear}`}
-                                    </Typography>
-                                </Box>
-                                <Box mb={4}>
-                                    <Typography variant="body1" gutterBottom>
-                                        {learningDetail}
-                                    </Typography>
-                                </Box>
-                            </TabPanel>
-                        ))}
-                    </Box>
+            <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>
+                <Tabs
+                    orientation={isMobile ? "horizontal" : "vertical"}
+                    variant="scrollable"
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="educationInfo"
+                    sx={{
+                        borderRight: 1, borderColor: 'divider', justifyContent: 'center', alignItems: 'center',
+                        '& .MuiTabs-flexContainer': {
+                            flexGrow: 1,
+                            minWidth: 100,
+                        },
+                    }}
+                >
+                    {education && education.map(({ id, course }, index) => (
+                        <Tab key={id} label={`${course}`} {...allyProps(0)} sx={{ fontSize: '16px', fontWeight: 600 }} />
+                    ))}
+                </Tabs>
+                <Box sx={{ width: "100%" }}>
+                    {education && education.map(({ id, course, detail, learningDetail }, index) => (
+                        <TabPanel
+                            key={id}
+                            value={value}
+                            index={index}
+                        >
+                            <Box mb={4} >
+                                <Typography variant="h4" component="h2" gutterBottom>
+                                    {course}
+                                </Typography>
+                            </Box>
+                            <Box mb={4}>
+                                <Typography variant="body1" gutterBottom>
+                                    {detail}
+                                </Typography>
+                            </Box>
+                            <Box mb={4} >
+                                <Typography color="textSecondary" variant="caption">
+                                    {`${education[index].startYear} - ${education[index].endYear}`}
+                                </Typography>
+                            </Box>
+                            <Box mb={4}>
+                                <Typography variant="body1" gutterBottom>
+                                    {learningDetail}
+                                </Typography>
+                            </Box>
+                        </TabPanel>
+                    ))}
                 </Box>
+            </Box>
         </Fade>
     );
 };

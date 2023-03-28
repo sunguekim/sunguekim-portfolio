@@ -96,6 +96,10 @@
         padding-bottom: 1.5rem;
     }
 
+    .project__section {
+        margin-left: -20px;
+    }
+
     .project__card {
         width: 100%;
         height: auto;
