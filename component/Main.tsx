@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { makeStyles, Typography } from '@mui/material'
+import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
 
@@ -8,7 +9,7 @@ interface VisibleProps {
     onHide: () => void
 }
 
-const Main = ({onHide }: VisibleProps) => {
+const Main:React.FC<VisibleProps> = ({ onHide }) => {
     return (
         <motion.div
             initial={{ opacity: 1 }}
@@ -32,9 +33,11 @@ const Main = ({onHide }: VisibleProps) => {
                         김선규입니다.
                     </Typography>
                     <div>
-                        <button className={`${styles.btn}`} onClick={onHide}>
-                            Get In Touch
-                        </button>
+                        <Link href='/#about'>
+                            <button className={`${styles.btn}`}>
+                                Get In Touch
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

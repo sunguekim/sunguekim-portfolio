@@ -2,6 +2,7 @@
 
 html,
 body {
+  height: 100%;
   font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth !important;
   transition: all 0.25s ease-in-out;

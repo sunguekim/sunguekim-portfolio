@@ -11,7 +11,8 @@ import profileimg from '../public/images/profile.jpg'
 import Subtitle from "./UI/Subtitle";
 
 
-const Home = () => {
+
+const Home: React.FC = () => {
     return (
         <div id="about" style={{ paddingTop: "100px" }}>
             <Subtitle subtitle="About Me" />
@@ -43,7 +44,7 @@ const Home = () => {
                     </p>
                     <Stack direction="row" spacing={2} sx={{ justifyContent: 'flex-start', marginTop: 4 }}>
                         <Button variant="outlined" startIcon={<GithubIcon />}>
-                            <Link href="/resume.pdf" download={true}>
+                            <Link href="https://github.com/sunguekim/sunguekim-portfolio">
                                 Github
                             </Link>
                         </Button>

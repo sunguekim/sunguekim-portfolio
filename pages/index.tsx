@@ -9,6 +9,7 @@ import Intro from '../component/About'
 import Project from '../component/Project'
 import Contact from '../component/Contact'
 import Layout from "../component/Layout";
+import Footer from "../component/Footer";
 
 
 const Home: NextPage = () => {
@@ -31,7 +32,6 @@ const Home: NextPage = () => {
         <Education />
         <Experience />
         <Project />
-        <Contact />
       </Layout>
     </Fragment>
   )

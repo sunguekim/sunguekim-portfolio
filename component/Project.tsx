@@ -8,7 +8,7 @@ import ProjectCard from './UI/ProjectCard';
 import styles from '../styles/Project.module.css'
 
 
-const Project = () => {
+const Project:React.FC = () => {
     return (
         <div id='project' style={{ paddingTop: "100px", justifyContent: "center" }}>
             <Container>

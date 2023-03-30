@@ -10,17 +10,13 @@
 
 <p align="center">
   <p align="center">Home Section</p>
-  <img src="screenshots/home.png" alt="Home section">
+  <img src="screenshots/Home.png" alt="Home section">
 </p>
 <p align="center">
   <p align="center">Dark Mode</p>
   <img src="screenshots/dark.png" alt="Home section">
 </p>
 <br />
-<p align="center">
-  <p align="center">About Section</p>
-  <img src="screenshots/about.png" alt="About section">
-</p>
 <br />
 <p align="center">
   <p align="center">Experience Section</p>

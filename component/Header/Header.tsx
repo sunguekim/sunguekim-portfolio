@@ -37,37 +37,28 @@ export const Links: ILinks[] = [
         name: "Project",
         path: "#project",
     },
-    {
-        id: 5,
-        name: "Contact",
-        path: "#contact",
-    },
 ];
 
 
 const Header = () => {
-    const [scrollFlag, setScrollFlag] = useState<boolean>(false);
-
+    const [scrollFlag, setScrollFlag] = useState(window.scrollY > 950);
     const HeaderDiv = styled('div')(({ theme }) => ({
         backgroundColor: scrollFlag ? theme.palette.background.default : "",
         boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
         position: "sticky",
-        marginBottom:-100,
+        Height: "100%",
+        marginBottom: -100,
         zIndex: 1,
-    }))
+    }));
 
-    const updateScroll = () => {
-        const { scrollY } = window;
-        const isScrolled = scrollY !== 0;
-        setScrollFlag(isScrolled);
-    };
-
-    const handleScroll = throttle(updateScroll, 100);
+    const updateScroll = throttle(() => {
+        setScrollFlag(window.scrollY > 950);
+    }, 100);
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', updateScroll);
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', updateScroll);
         };
     }, []);
 
