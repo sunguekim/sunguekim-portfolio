@@ -40,22 +40,31 @@ export const Links: ILinks[] = [
 ];
 
 
-const Header:React.FC = () => {
-    const [scrollFlag, setScrollFlag] = useState(window.scrollY > 950);
+const Header: React.FC = () => {
+
+    const [scrollFlag, setScrollFlag] = useState(false);
+    const [boxShadow, setBoxShadow] = useState("none");
+
     const HeaderDiv = styled('div')(({ theme }) => ({
         backgroundColor: scrollFlag ? theme.palette.background.default : "",
-        boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
+        boxShadow: boxShadow,
         position: "sticky",
-        alignItems:"center",
+        alignItems: "center",
         zIndex: 1,
     }));
 
     const updateScroll = throttle(() => {
-        const flagPosition = window.innerHeight *  1.1
-        setScrollFlag(window.scrollY > flagPosition);
+        const scrollPos = window.scrollY;
+        const alpha = scrollPos < window.innerHeight * 1.1
+            ? 0
+            : (scrollPos - window.innerHeight * 1.1) / (window.innerHeight * 0.3);
+        const boxShadow = `5px 5px 15px -5px rgba(1, 210, 147, ${alpha})`;
+        setBoxShadow(boxShadow);
+        setScrollFlag(scrollPos > window.innerHeight * 1.1);
     }, 100);
 
     useEffect(() => {
+        updateScroll();
         window.addEventListener('scroll', updateScroll);
         return () => {
             window.removeEventListener('scroll', updateScroll);
