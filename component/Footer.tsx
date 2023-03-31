@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                         ))}
                     </div>
                 </Grid>
-                <Grid item xs={6} className={`${styles.footer__top}`}>
+                <Grid item xs={6} className={`${styles.footer_top}`}>
                     <div className={`${styles.footer_creator}`}>
                         <h4>
                             Created by SungueKim

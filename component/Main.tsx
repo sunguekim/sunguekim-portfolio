@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { makeStyles, Typography } from '@mui/material'
 import Link from 'next/link';
 import styles from '../styles/Home.module.css'
+import { styled } from '@mui/material/styles';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
+const StyledArrowDownwardIcon = styled(ArrowDownwardIcon)(({ theme }) => ({
+    fontSize: 40,
+  }));
 
-
-const Main:React.FC = () => {
+const Main: React.FC = () => {
     return (
         <motion.div
             initial={{ opacity: 1 }}
@@ -15,6 +19,7 @@ const Main:React.FC = () => {
             <div className={`${styles.main}`} >
                 <div className={`${styles.wrapper}`}>
                     <Typography
+                        fontFamily=''
                         variant='h4'
                     >
                         안녕하세요
@@ -35,6 +40,9 @@ const Main:React.FC = () => {
                                 Get In Touch
                             </button>
                         </Link>
+                    </div>
+                    <div className={`${styles.arrow_wrapper}`}>
+                        <StyledArrowDownwardIcon/>
                     </div>
                 </div>
             </div>

@@ -51,7 +51,7 @@ const Header = () => {
     }));
 
     const updateScroll = throttle(() => {
-        setScrollFlag(window.scrollY > 1000);
+        setScrollFlag(window.scrollY > 1100);
     }, 100);
 
     useEffect(() => {
