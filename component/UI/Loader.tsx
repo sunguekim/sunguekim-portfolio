@@ -12,7 +12,7 @@ const draw = {
         pathLength: 1,
         opacity: 1,
         transition: {
-            pathLength: { duration: 1, ease: "easeInOut" },
+            pathLength: { duration: 1.3, ease: "easeInOut" },
             opacity: { duration: 0.01 }
         }
     }
@@ -29,7 +29,7 @@ const Loader = ({ setLoading }: LoaderProps) => {
                 y: "-100vh"
             }}
             transition={{
-                delay: 1.5,
+                delay: 1.8,
                 duration: 0.3
             }}
             onAnimationComplete={definition => {
