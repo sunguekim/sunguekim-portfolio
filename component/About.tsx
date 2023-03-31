@@ -57,12 +57,14 @@ const Home: React.FC = () => {
                                 </div>
                             </a>
                             <a href="">
-                            <div className={`${styles.details}`}>
-                                <div className={`${styles.detailsIcon}`}>
-                                    <SlDocs />
+                                <div className={`${styles.details}`}>
+                                    <a href="/resume.pdf">
+                                        <div className={`${styles.detailsIcon}`}>
+                                            <SlDocs />
+                                        </div>
+                                        <p>이력서</p>
+                                    </a>
                                 </div>
-                                <p>이력서</p>
-                            </div>
                             </a>
                         </Stack>
                         <Stack direction="column" spacing={2} sx={{ justifyContent: 'flex-start', marginTop: 4, width: "100%" }}>
