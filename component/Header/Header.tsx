@@ -40,7 +40,7 @@ export const Links: ILinks[] = [
 ];
 
 
-const Header = () => {
+const Header:React.FC = () => {
     const [scrollFlag, setScrollFlag] = useState(window.scrollY > 950);
     const HeaderDiv = styled('div')(({ theme }) => ({
         backgroundColor: scrollFlag ? theme.palette.background.default : "",
@@ -51,7 +51,8 @@ const Header = () => {
     }));
 
     const updateScroll = throttle(() => {
-        setScrollFlag(window.scrollY > 1100);
+        const flagPosition = window.innerHeight *  1.1
+        setScrollFlag(window.scrollY > flagPosition);
     }, 100);
 
     useEffect(() => {
