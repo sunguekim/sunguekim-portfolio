@@ -47,7 +47,7 @@ const Main: React.FC = () => {
                     <Typography
                         variant='h3'
                     >
-                        김선규입니다.
+                        김선규입니다
                     </Typography>
                     <div>
                         <Link href='/#about'>
