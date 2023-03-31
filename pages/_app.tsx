@@ -22,6 +22,7 @@ const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
 
   const [isLoading, setLoading] = useState(true);
 
+
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -43,9 +44,21 @@ const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
         lg: 1280,
         xl: 1920,
       },
+      typography: {
+        fontFamily: "'Raleway', sans-serif"
+      }
     },
   }), [mode]);
 
+
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+
+  useEffect(() => {
+    setScreenSize();
+  });
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
@@ -65,11 +78,11 @@ const MyApp = ({ Component, pageProps, themeSetting, router }: MyAppProps) => {
             <ColorContext.Provider value={colorMode} >
               <ThemeProvider theme={theme}>
                 <CssBaseline />
-                  <AnimatePresence mode='wait' initial={false} >
-                    <MotionEffect>
-                      <Component {...pageProps} />
-                    </MotionEffect>
-                  </AnimatePresence>
+                <AnimatePresence mode='wait' initial={false} >
+                  <MotionEffect>
+                    <Component {...pageProps} />
+                  </MotionEffect>
+                </AnimatePresence>
               </ThemeProvider>
             </ColorContext.Provider>
           )

@@ -13,20 +13,14 @@ import Footer from "../component/Footer";
 
 
 const Home: NextPage = () => {
-  const [mainVisible, setMainVisible] = useState<boolean>(true);
-
-  const handleMainHide = () => {
-    setMainVisible(false);
-  }
 
   return (
     <Fragment>
       <Head>
         <title>김선규 포트폴리오</title>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Raleway:wght@200;600;700&display=swap" rel="stylesheet" />
       </Head>
-      <AnimatePresence>
-        {mainVisible && <Main onHide={handleMainHide} />}
-      </AnimatePresence>
+      <Main />
       <Layout>
         <Intro />
         <Education />

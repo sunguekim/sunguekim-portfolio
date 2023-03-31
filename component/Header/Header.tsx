@@ -46,13 +46,12 @@ const Header = () => {
         backgroundColor: scrollFlag ? theme.palette.background.default : "",
         boxShadow: scrollFlag ? "5px 5px 15px -5px #01d29344" : "",
         position: "sticky",
-        Height: "100%",
-        marginBottom: -100,
+        alignItems:"center",
         zIndex: 1,
     }));
 
     const updateScroll = throttle(() => {
-        setScrollFlag(window.scrollY > 950);
+        setScrollFlag(window.scrollY > 1000);
     }, 100);
 
     useEffect(() => {

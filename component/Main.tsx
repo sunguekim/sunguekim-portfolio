@@ -5,11 +5,8 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 
 
-interface VisibleProps {
-    onHide: () => void
-}
 
-const Main:React.FC<VisibleProps> = ({ onHide }) => {
+const Main:React.FC = () => {
     return (
         <motion.div
             initial={{ opacity: 1 }}
