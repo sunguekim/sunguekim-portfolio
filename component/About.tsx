@@ -56,14 +56,12 @@ const Home: React.FC = () => {
                                     <p>Github</p>
                                 </div>
                             </a>
-                            <a href="">
+                            <a href="/resume.pdf">
                                 <div className={`${styles.details}`}>
-                                    <a href="/resume.pdf">
-                                        <div className={`${styles.detailsIcon}`}>
-                                            <SlDocs />
-                                        </div>
-                                        <p>이력서</p>
-                                    </a>
+                                    <div className={`${styles.detailsIcon}`}>
+                                        <SlDocs />
+                                    </div>
+                                    <p>이력서</p>
                                 </div>
                             </a>
                         </Stack>
