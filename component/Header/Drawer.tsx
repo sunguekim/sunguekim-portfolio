@@ -10,7 +10,7 @@ import Link from 'next/link';
 export const HeaderDrawer = () => {
     const [isOpen, setOpen] = useState(false);
     const theme = useTheme()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'))
     const handleDrawerOpen = () => {
         if (isOpen) setOpen(false);
         setOpen(true);
@@ -19,7 +19,6 @@ export const HeaderDrawer = () => {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    console.log(isMobile);
 
     return (
         <>
@@ -34,6 +33,7 @@ export const HeaderDrawer = () => {
                 anchor='right'
                 open={isOpen}
                 onClose={() => { setOpen(false) }}
+                variant={isMobile ? 'temporary' : 'permanent'}
             >
                 <Box p={2} width='250px' textAlign='center' zIndex={-9999} justifyContent='center' role='presentation'>
                     <List>
